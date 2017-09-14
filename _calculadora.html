@@ -1,0 +1,73 @@
+<html>
+	<head>
+		<title> CALCULADORA </title>
+		<style>
+		.pantalla input{
+			font size:12;
+			color: black;
+			border:2px solid black;
+		}
+		.button
+		{
+		   background-color:rgb(255, 50,255 );
+		}
+
+		</style>
+		<script>
+			function clean(val){
+				document.getElementById("pantalla").value = val;
+			}
+			function math(val){
+				document.getElementById("pantalla").value += val;
+			}
+			function igual(){
+				try{
+					clean(eval(document.getElementById("pantalla").value))
+				}
+				catch(igual)
+				{
+					clean('error')
+				}
+			}
+
+		</script>
+	 </head>
+	 <body>
+	 	
+	 	<div class="pantalla">
+	 		<input type "text" size="12.00" id="pantalla" readonly>
+	 		<div class="botones"> 		
+			<p>
+				<input type="button" class="button" value = "7" onclick= 'math("7")'>
+				<input type="button" class="button" value = "8" onclick= 'math("8")'>
+				<input type="button" class="button" value = "9" onclick= 'math("9")'>
+				<input type="button" class="button" value = "/" onclick= 'math("/")'>
+				<input type="button" class="button" value = "C" onclick= 'clean("")'>
+
+			</p>
+			
+			<p>
+				<input type="button" class="button" value = "4" onclick= 'math("4")'>
+				<input type="button" class="button" value = "5" onclick= 'math("5")'>
+				<input type="button" class="button" value = "6" onclick= 'math("6")'>
+				<input type="button" class="button" value = "x" onclick= 'math("*")'>
+			</p>
+			
+			<p>
+				<input type="button" class="button" value = "3" onclick= 'math("3")'>
+				<input type="button" class="button" value = "2" onclick= 'math("2")'>
+				<input type="button" class="button" value = "1" onclick= 'math("1")'>
+				<input type="button" class="button" value = "-" onclick= 'math("-")'>
+			</p>
+			
+			<p>
+				<input type="button" class="button" value = "0" onclick= 'math("0")'>
+				<input type="button" class="button" value = "." onclick= 'math(".")'>
+				<input type="button" class="button" value = "+" onclick= 'math("+")'>
+				<input type="button" class="button" value = "=" onclick= 'igual()'>
+			</p>	
+		</div>
+	 	</div>
+	 </body>
+
+</html>
